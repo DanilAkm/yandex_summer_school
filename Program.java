@@ -16,8 +16,7 @@ class Program {
     DataCenter[] centers = new DataCenter[n];
 
     for (int i = 0; i < n; i++) {
-      centers[i] = new DataCenter();
-      centers[i].AllocateServers(m);
+      centers[i] = new DataCenter(m);
     }
 
     for (int i = 0; i < q; i++) {
@@ -74,7 +73,7 @@ class DataCenter {
   int[] servers;
   int active;
 
-  void AllocateServers(int size) {
+  public DataCenter(int size) {
     servers = new int[size];
     ResetServers(size);
   }
